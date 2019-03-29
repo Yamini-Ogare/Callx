@@ -13,6 +13,8 @@ import com.example.hp.callx.Activities.CallActivity;
  */
 
 public class Outcall extends BroadcastReceiver {
+
+
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.d(Outcall.class.getSimpleName(), intent.toString());

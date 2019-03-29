@@ -3,9 +3,8 @@
     package="com.example.hp.callx">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
-
-
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -51,13 +50,16 @@
             </intent-filter>
         </service>
 
-       <!-- <receiver android:name=".OutgoingCallReceiver" >
+        <!--
+        <receiver
+            android:name=".Reciever.Outcall" >
             <intent-filter>
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>
-        </receiver>-->
-
-        <activity android:name=".Activities.CallActivity"></activity>
+        </receiver>
+        -->
+        <activity android:name=".Activities.CallActivity" />
+        <activity android:name=".Activities.ReceiverActivity"></activity>
     </application>
 
 </manifest>

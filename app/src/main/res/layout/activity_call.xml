@@ -26,5 +26,36 @@
         android:id="@+id/endcall"
 
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Mute"
+        android:id="@+id/mute"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Speaker"
+        android:id="@+id/speaker"
+        android:onClick="speaker"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Hold"
+        android:id="@+id/hold"
+        android:onClick="hold"
+
+        />
 
 </LinearLayout>
