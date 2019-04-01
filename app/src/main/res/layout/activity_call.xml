@@ -7,12 +7,16 @@
     tools:context="com.example.hp.callx.Activities.CallActivity"
     android:orientation="vertical">
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Phone number :"
+        android:text="Call state"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+      android:gravity="center"
+        android:id="@+id/state"
+
         />
 
     <TextView
@@ -88,8 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="110dp"
-        android:text="Bluetooth"
+        android:layout_marginLeft="90dp"
+        android:text="Bluetooth is On"
         android:id="@+id/blue"
         android:onClick="blue"
 

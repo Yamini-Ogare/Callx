@@ -27,9 +27,10 @@ import com.google.gson.reflect.TypeToken;
 
 public class CallActivity extends AppCompatActivity {
 
-    TextView textView ;
-    Button button, bmute, bhold, bspeaker;
+    TextView textView, state ;
+    Button button, bmute, bhold, bspeaker, bblue;
     SharedPreferences preferences ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,21 @@ public class CallActivity extends AppCompatActivity {
         bmute = (Button) findViewById(R.id.mute);
         bhold = (Button) findViewById(R.id.hold);
         bspeaker = (Button) findViewById(R.id.speaker) ;
+        bblue = (Button) findViewById(R.id.blue) ;
+        state = (TextView) findViewById(R.id.state);
+
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        if (mBluetoothAdapter.isEnabled()) {
+            bblue.setText("Bluetooth is On");
+
+        }
+        else {
+             bblue.setText("Bluetooth is Off");
+
+        }
+
+
 
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null) {
@@ -85,6 +101,7 @@ public class CallActivity extends AppCompatActivity {
             bmute.setText("unmute");
         }
 
+
     }
 
     private BroadcastReceiver onNotice = new BroadcastReceiver() {
@@ -101,6 +118,16 @@ public class CallActivity extends AppCompatActivity {
 
                     endcall();
 
+                }
+
+                if (status.equalsIgnoreCase("statedialing")){
+
+                    state.setText("Dialing...");
+                }
+
+                if (status.equalsIgnoreCase("stateactive")){
+
+                    state.setText("On Call...");
                 }
             }
         }
@@ -223,6 +250,7 @@ public class CallActivity extends AppCompatActivity {
 
     public void blue(View view) {
 
+
         bluetooth();
 
     }
@@ -241,10 +269,12 @@ public class CallActivity extends AppCompatActivity {
             BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             if (mBluetoothAdapter.isEnabled()) {
                 mBluetoothAdapter.disable();
+                bblue.setText("Bluetooth is off");
+
             }
             else {
                 mBluetoothAdapter.enable();
-
+                bblue.setText("Bluetooth is on");
                 Intent intentOpenBluetoothSettings = new Intent();
                 intentOpenBluetoothSettings.setAction(android.provider.Settings.ACTION_BLUETOOTH_SETTINGS);
                 startActivity(intentOpenBluetoothSettings);

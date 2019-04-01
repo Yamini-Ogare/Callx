@@ -32,6 +32,7 @@ public class DialerActivity extends AppCompatActivity {
     Button button ;
     SharedPreferences preferences;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

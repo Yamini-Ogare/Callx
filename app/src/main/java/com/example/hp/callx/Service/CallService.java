@@ -62,6 +62,33 @@ public class CallService extends InCallService {
                 }
                 editor.apply();
 
+
+                if(call.getState()==call.STATE_DIALING){
+
+                    Intent intent = new Intent();
+                    intent.setAction("com.example.hp.callx.CUSTOM_EVENT");
+                    intent.putExtra("Key", "statedialing");
+
+                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+                }
+                else if(call.getState()==call.STATE_ACTIVE){
+
+                    Intent intent = new Intent();
+                    intent.setAction("com.example.hp.callx.CUSTOM_EVENT");
+                    intent.putExtra("Key", "stateactive");
+
+                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+                }
+                else if(call.getState()==Call.STATE_RINGING){
+
+                    Intent intent = new Intent();
+                    intent.setAction("com.example.hp.callx.CUSTOM_EVENT");
+                    intent.putExtra("Key", "stateringing");
+
+                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+                }
+
+
             }
         });
 
@@ -118,7 +145,7 @@ public class CallService extends InCallService {
                 // and get whatever type user account id is
                 if (status.equalsIgnoreCase("stop")) {
 
-                    Toast.makeText(getApplicationContext(), "call Removed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "call ended", Toast.LENGTH_LONG).show();
                     call.disconnect();
 
                 } else if(status.equalsIgnoreCase("pick")) {
