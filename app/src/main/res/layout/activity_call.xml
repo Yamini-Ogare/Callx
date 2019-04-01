@@ -10,6 +10,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Phone number :"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/callto"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -26,11 +34,18 @@
         android:id="@+id/endcall"
 
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
         android:text="Mute"
         android:id="@+id/mute"
 
@@ -40,10 +55,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="120dp"
         android:text="Speaker"
         android:id="@+id/speaker"
         android:onClick="speaker"
+
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:text="Hold"
+        android:id="@+id/hold"
+        android:onClick="hold"
 
         />
 
@@ -51,11 +87,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:text="Hold"
-        android:id="@+id/hold"
-        android:onClick="hold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="110dp"
+        android:text="Bluetooth"
+        android:id="@+id/blue"
+        android:onClick="blue"
 
         />
-
+    </LinearLayout>
 </LinearLayout>
